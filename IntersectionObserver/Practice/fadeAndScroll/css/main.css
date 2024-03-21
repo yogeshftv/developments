@@ -15,6 +15,7 @@ header {
   --text: #f4f4f4;
   --text-inverse: #333;
   --background: transparent;
+  
   position: fixed;
   top: 0;
   left: 0;
