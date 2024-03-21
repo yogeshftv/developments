@@ -1,0 +1,7 @@
+- JSX
+- Components
+- Props
+- State Management
+- Routing
+- HTTP Requests (Fetching Data)
+- Forms
