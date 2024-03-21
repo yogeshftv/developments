@@ -191,6 +191,44 @@
       </div>
     </section>
 
+    <section class="features">
+      <h2>Our Services</h2>
+      <div class="feature">
+        <img src="https://via.placeholder.com/400" alt="Feature 1">
+        <h3>Service 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="feature">
+        <img src="https://via.placeholder.com/400" alt="Feature 2">
+        <h3>Service 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="feature">
+        <img src="https://via.placeholder.com/400" alt="Feature 3">
+        <h3>Service 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Our Customers</h2>
+      <div class="feature">
+        <img src="https://via.placeholder.com/400" alt="Feature 1">
+        <h3>Customer 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="feature">
+        <img src="https://via.placeholder.com/400" alt="Feature 2">
+        <h3>Customer 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="feature">
+        <img src="https://via.placeholder.com/400" alt="Feature 3">
+        <h3>Customer 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </section>
+
     <section class="testimonial">
       <h2>What Our Customers Say</h2>
       <div class="quote">
@@ -212,18 +250,36 @@
   <!-- custom script -->
   <script>
     const navbar = document.querySelector("nav.navbar");
+    const navbarBrand = document.querySelector(".navbar-brand");
+    const navbarElements = document.querySelectorAll(".nav-link");
     const triggerSection = document.querySelector("section.hero");
+
+    function changeNavbarElementColor() {
+      navbarElements.forEach(element => {
+        element.style.color = "white";
+      });
+    };
+
+    function resetNavbarElementColor() {
+      navbarElements.forEach(element => {
+        element.style.color = "rgba(0,0,0,.55)";
+      });
+    };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
           navbar.classList.add("nav_scrolled");
+          changeNavbarElementColor();
+          navbarBrand.style.color="white";
         } else {
           navbar.classList.remove("nav_scrolled");
+          resetNavbarElementColor();
+          navbarBrand.style.color="black";
         }
       });
     }, {
-      rootMargin: "-200px 0px 0px 0px",
+      rootMargin: "-100px 0px 0px 0px",
     });
 
     observer.observe(triggerSection);
