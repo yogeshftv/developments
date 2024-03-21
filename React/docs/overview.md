@@ -1,0 +1,3 @@
+- React creates it own DOM known as Virtual DOM
+- It compares the Main DOM and the Virtual DOM for differences.
+- It only updates what needs to updated.

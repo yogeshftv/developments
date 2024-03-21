@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading | Intersection Observer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #131316;
+            color: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        section {
+            display: grid;
+            place-items: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        section img {
+            width: 50%;
+            opacity: 0; /* Initially the image is hidden */
+            transition: opacity 3s; /* Transition only the opacity property */
+        }
+
+        .fade-in {
+            opacity: 1; /* Fade-in effect */
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+
+        - In lazy loading rather defining a src attribute we define a custom data attribute because if we define the src attribute it will cause the browser to load the image immediately.
+
+     -->
+     <div class="container">
+        <section>
+            <img alt="image 1" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671159.jpg">
+        </section>
+    
+        <section>
+            <img alt="image 2" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671157.jpg">
+        </section>
+    
+        <section>
+            <img alt="image 3" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671132.jpg">
+        </section>
+    
+        <section>
+            <img alt="image 4" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671118.jpg">
+        </section>
+     </div>
+
+    <script>
+        const target = document.querySelectorAll("img");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const src = img.getAttribute("data-lazy");
+                    img.setAttribute("src", src);
+                    img.classList.add("fade-in");
+                }
+            })
+        }, {
+            threshold: 1,
+        })
+
+        target.forEach(element => observer.observe(element));
+    </script>
+</body>
+</html>

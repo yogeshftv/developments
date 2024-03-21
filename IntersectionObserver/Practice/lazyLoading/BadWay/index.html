@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading | The Bad Way</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #131316;
+            color: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        section {
+            display: grid;
+            place-items: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        section img {
+            width: 50%;
+            opacity: 0; /* Initially the image is hidden */
+            transition: opacity 3s; /* Transition only the opacity property */
+        }
+
+        .fade {
+            opacity: 1; /* Fade-in effect */
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+
+        - In lazy loading rather defining a src attribute we define a custom data attribute because if we define the src attribute it will cause the browser to load the image immediately.
+
+     -->
+     <div class="container">
+        <section>
+            <img alt="image 1" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671159.jpg">
+        </section>
+    
+        <section>
+            <img alt="image 2" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671157.jpg">
+        </section>
+    
+        <section>
+            <img alt="image 3" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671132.jpg">
+        </section>
+    
+        <section>
+            <img alt="image 4" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671118.jpg">
+        </section>
+     </div>
+
+    <script>
+        const target = document.querySelectorAll("img");
+        console.log(target);
+
+        window.addEventListener('scroll', (e) => {
+            target.forEach(img => {
+                console.log('Computation is being performed by browser, it is very CPU extensive');
+    
+                // returns element's size and position relative to the viewport (the visible area of the browser and window) 
+                const rect = img.getBoundingClientRect().top;
+                console.log("elements top position", rect);
+                console.log("innerHeight", window.innerHeight);
+                console.log(rect <= window.innerHeight);
+                if (rect <= window.innerHeight) {
+                    const src = img.getAttribute('data-lazy');
+                    img.setAttribute("src", src);
+                    img.classList.add('fade');
+                }
+            })
+        })
+    </script>
+</body>
+</html>

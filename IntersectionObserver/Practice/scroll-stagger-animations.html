@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Stagger Animation | Intersection Observer</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #131316;
+            color: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+
+        section {
+            display: grid;
+            place-items: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .hidden {
+            opacity: 0;
+            filter: blur(5px);
+            transition: all 1s;
+            transform: translateX(-100%);
+        }
+
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+
+        .logos {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logos .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logos .logo img {
+            width: 100%;
+        }
+
+        .logo:nth-child(2) {
+            transition-delay: 200ms;
+        }
+
+        .logo:nth-child(3) {
+            transition-delay: 400ms;
+        }
+
+        .logo:nth-child(4) {
+            transition-delay: 600ms;
+        }               
+    </style>
+
+</head>
+<body>
+    <section class="hidden">
+        <h1>Scroll Animation</h1>
+        <p>Lorem ipsum dolor sit.</p>
+    </section>
+
+    <section class="hidden">
+        <h2>Buy My Product</h2>
+        <p>
+            The things you own end up owning you.
+            It's only after you lose everything that you're free to do anything.
+        </p>
+    </section>
+
+    <section class="hidden">
+        <h2>It's really good</h2>
+        <div class="logos">
+            <div class="logo hidden">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671159.jpg" alt="logo 1">
+            </div>
+            <div class="logo hidden">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671157.jpg" alt="logo 2">
+            </div>
+            <div class="logo hidden">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671132.jpg" alt="logo 3">
+            </div>
+            <div class="logo hidden">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671118.jpg" alt="logo 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- custom script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.remove('show');
+                }
+
+            })
+        });
+
+        const hiddenElements = document.querySelectorAll(".hidden");
+        console.log(hiddenElements);
+        hiddenElements.forEach((element) => observer.observe(element));
+    </script>
+</body>
+</html>

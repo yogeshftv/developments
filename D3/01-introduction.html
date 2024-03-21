@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d3.js | introduction</title>
+</head>
+<body>
+
+    <h1>d3.js | Selection & Manipulation</h1>
+    <h2>Hello World</h2>
+    <h3>d3.js is awesome</h3>
+    <p>lorem ipsum dolor emet</p>
+    <div></div>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom JavaScript -->
+    <script>    
+        /*
+            - Using d3 you select DOM element using CSS selectors or the name of the element itself.
+            - d3 provides too built-in method to select DOM elements: d3.select() & d3.selectAll().
+            - Both of these method accept a CSS selector or the name of DOM element as a param & thus it return the reference of the selected element.
+            - d3.select() return first selection from the DOM element matching the criteria.
+            - d3.selectAll() return all selection from the DOM element matching the criteria.
+        */
+        d3.select("h1"); // returns the reference of the first h1 element that it finds from the DOM else it returns empty selection.
+
+        /*
+            - Using d3 you can manipulate a DOM element as well which means you can update their style values or bind data as well.
+        */
+        d3.select("h2").style("color", "red");
+
+        /*
+            - In d3 you can also chain the method with each other as well so that it helps keeping the code clean and easy to read. 
+        */
+       d3.select("p").style("background-color", "blue").text("ipsum dolor").style("color", "white").style("font-size", "2rem");
+       d3.select("h3").style("font-size", "5rem").attr("id", "awesome") // here you have chained the style method with attr method which is used for adding different attributes to the selected DOM element.
+
+       /*
+            - To append DOM element you can you use append method
+       */
+        d3.select("div").append("p").text("JavaScript is Cool").style("font-size", "5rem")
+
+        /*
+            - Returns the reference of all selected DOM elemented
+        */
+       d3.selectAll("li").style("color", "brown");
+    </script>
+</body>
+</html>

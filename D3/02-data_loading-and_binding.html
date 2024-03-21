@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d3.js | data loading & binding</title>
+</head>
+<body>
+
+    <!-- Behaviour One -->
+    <h1>Active User</h1>
+    <div id="active-users"></div>
+    
+    <!-- Behaviour Two -->
+    <h1>Inactive User</h1>
+    <div id="inactive-users">
+        <p>user1</p>
+        <p>user2</p>
+        <p>user3</p>
+        <p>user4</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        /*
+            - Using d3 we can map data into our DOM elements meaning we can append update or display DOM elements using the dataset
+                - data(): used for providing dataset, it takes the provided dataset into the waiting state.
+                - enter(): is used to create missing elements and return the enter selection. This method takes the dataset from the waiting state and performs the further/next chained operations for each dataset element/item.
+
+        */
+
+        var dataset1 = ['john','mike','drake','elias','louis','michelle'];
+        d3.select('#active-users')
+            .selectAll('p')
+            .data(dataset1) 
+            .enter() 
+            .append('p')
+            .text(`D3 is awesome! ${Math.random()}`)
+            .text(function(d) { return d; }) // this function is updating the text of the paragraph tags, this function gets the value of data item from its parameter which is represented by "d".
+
+        var dataset2 = ['ibrahim', 'miachel', 'rohan', 'kevin'];
+        d3.select("#inactive-users")
+            .selectAll("p")
+            .data(dataset2)
+            .text(d => d);  
+    </script>
+</body>
+</html>
