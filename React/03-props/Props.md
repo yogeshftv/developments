@@ -3,7 +3,7 @@
 - To pass props, add them to the JSX, just like you would with HTML attributes.
 - To read props you can either use dot notation or you can destructure them in the children component's param itself.
 - You can specify a default value like size = 100, which is used for missing and undefined props.
-- You can forward all props from one component to another using {...props} syntax.
+- You can forward all props from one component to another using spread syntax, for example {...props}.
 - Nested JSX like <Card><Avatar /></Card> will appear as Card component’s children prop.
 
 - Props are read-only snapshots in time: every render receives a new version of props.
