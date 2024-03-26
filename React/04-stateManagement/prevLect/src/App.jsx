@@ -13,13 +13,13 @@ function App() {
     if (counter < 20) {
       setCounter(counter + 1);
     }
-  }
+  };
 
   const removeValue = () => {
     if (counter > 0) {
       setCounter(counter - 1);
     }
-  }
+  };
 
   return (
     <>
