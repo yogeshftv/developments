@@ -30,7 +30,11 @@
             min-height: 100vh;
         }
 
-
+        section img {
+            width: 50%;
+            opacity: 0; /* Initially the image is hidden */
+            transition: opacity 3s; /* Transition only the opacity property */
+        }
 
         .fade-in {
             opacity: 1; /* Fade-in effect */
@@ -62,22 +66,22 @@
     </div>
 
     <script>
-        // const target = document.querySelectorAll("img");
+        const target = document.querySelectorAll("img");
 
-        // const observer = new IntersectionObserver((entries) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             const img = entry.target;
-        //             const src = img.getAttribute("data-lazy");
-        //             img.setAttribute("src", src);
-        //             img.classList.add("fade-in");
-        //         }
-        //     })
-        // }, {
-        //     threshold: 1,
-        // })
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const src = img.getAttribute("data-lazy");
+                    img.setAttribute("src", src);
+                    img.classList.add("fade-in");
+                }
+            })
+        }, {
+            threshold: 1,
+        })
 
-        // target.forEach(element => observer.observe(element));
+        target.forEach(element => observer.observe(element));
     </script>
 </body>
 </html>
