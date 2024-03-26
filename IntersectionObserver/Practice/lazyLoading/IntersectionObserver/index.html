@@ -30,11 +30,7 @@
             min-height: 100vh;
         }
 
-        section img {
-            width: 50%;
-            opacity: 0; /* Initially the image is hidden */
-            transition: opacity 3s; /* Transition only the opacity property */
-        }
+
 
         .fade-in {
             opacity: 1; /* Fade-in effect */
@@ -47,41 +43,41 @@
         - In lazy loading rather defining a src attribute we define a custom data attribute because if we define the src attribute it will cause the browser to load the image immediately.
 
      -->
-     <div class="container">
+    <div class="container">
         <section>
-            <img alt="image 1" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671159.jpg">
+            <img alt="image 1" src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671159.jpg" loading="lazy">
         </section>
-    
+
         <section>
-            <img alt="image 2" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671157.jpg">
+            <img alt="image 2" src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671157.jpg" loading="lazy">
         </section>
-    
+
         <section>
-            <img alt="image 3" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671132.jpg">
+            <img alt="image 3" src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671132.jpg" loading="lazy">
         </section>
-    
+
         <section>
-            <img alt="image 4" data-lazy="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671118.jpg">
+            <img alt="image 4" src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671118.jpg" loading="lazy">
         </section>
-     </div>
+    </div>
 
     <script>
-        const target = document.querySelectorAll("img");
+        // const target = document.querySelectorAll("img");
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const src = img.getAttribute("data-lazy");
-                    img.setAttribute("src", src);
-                    img.classList.add("fade-in");
-                }
-            })
-        }, {
-            threshold: 1,
-        })
+        // const observer = new IntersectionObserver((entries) => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             const img = entry.target;
+        //             const src = img.getAttribute("data-lazy");
+        //             img.setAttribute("src", src);
+        //             img.classList.add("fade-in");
+        //         }
+        //     })
+        // }, {
+        //     threshold: 1,
+        // })
 
-        target.forEach(element => observer.observe(element));
+        // target.forEach(element => observer.observe(element));
     </script>
 </body>
 </html>

@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-// React controls UI Updation and Manipulation using hooks
+// React controls UI Updation & Manipulation using hooks
 
 function App() {
 
-  // useState Propogates the changes into User Interface (DOM). It tracks the state of the User Interface. 
-  let [counter, setCounter] = useState(15); // returns two values in an array [current value, function used to update state]
+  // The useState Propogates the changes into User Interface (DOM). 
+  // It tracks the state of the User Interface. 
+  let [counter, setCounter] = useState(15); 
+  // returns two values in an array [current value, function used to update state]
 
   const addValue = () => {
     if (counter < 20) {
