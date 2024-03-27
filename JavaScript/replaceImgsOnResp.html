@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+    </style>
+</head>
+<body>
+    <img class="dynamic-img" src="./images/img1.png" alt="images 1">
+    <img class="dynamic-img" src="./images/img2.png" alt="images 2">
+    <img class="dynamic-img" src="./images/img3.png" alt="images 3">
+
+    <img class="dynamic-img" src="./images/img1.png" alt="images 1">
+    <img class="dynamic-img" src="./images/img2.png" alt="images 2">
+    <img class="dynamic-img" src="./images/img3.png" alt="images 3">
+
+    <img class="dynamic-img" src="./images/img1.png" alt="images 1">
+    <img class="dynamic-img" src="./images/img2.png" alt="images 2">
+    <img class="dynamic-img" src="./images/img3.png" alt="images 3">
+
+    <img class="dynamic-img" src="./images/img1.png" alt="images 1">
+    <img class="dynamic-img" src="./images/img2.png" alt="images 2">
+    <img class="dynamic-img" src="./images/img3.png" alt="images 3">
+
+    <img class="dynamic-img" src="./images/img1.png" alt="images 1">
+    <img class="dynamic-img" src="./images/img2.png" alt="images 2">
+    <img class="dynamic-img" src="./images/img3.png" alt="images 3">
+
+    <script>
+
+    const imgRefs = document.querySelectorAll(".dynamic-img");
+
+    const defaultImages = [
+        "./images/img1.png", "./images/img2.png", "./images/img3.png", 
+        "./images/img1.png", "./images/img2.png", "./images/img3.png",
+        "./images/img1.png", "./images/img2.png", "./images/img3.png",
+        "./images/img1.png", "./images/img2.png", "./images/img3.png",
+        "./images/img1.png", "./images/img2.png", "./images/img3.png"
+    ];
+
+    const dynamicImages = [
+        "./images/img4.png","./images/img5.png", "./images/img6.png",
+        "./images/img4.png","./images/img5.png", "./images/img6.png",
+        "./images/img4.png","./images/img5.png", "./images/img6.png",
+        "./images/img4.png","./images/img5.png", "./images/img6.png",
+        "./images/img4.png","./images/img5.png", "./images/img6.png"
+    ];
+        
+    const images = [];
+
+    imgRefs.forEach((img, index) => {
+        images.push({
+            element: img,
+            defaultSrc: defaultImages[index],
+            dynamicSrc: dynamicImages[index]
+        });
+    });
+
+    const mediaQuery = window.matchMedia("(max-width: 600px)");
+
+    mediaQuery.addEventListener("change", e => {
+        if (e.matches) {
+            images.forEach(image => {
+                image.element.src = image.dynamicSrc;
+            });
+        } else {
+            images.forEach(image => {
+                image.element.src = image.defaultSrc;
+            });
+        }
+    });
+
+    </script>
+</body>
+</html>
