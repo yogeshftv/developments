@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+  
 // React controls UI Updation & Manipulation using hooks
 
 function App() {
@@ -36,4 +36,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
