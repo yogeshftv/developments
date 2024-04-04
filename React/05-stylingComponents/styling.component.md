@@ -1,3 +1,5 @@
+You can style React components either using external css (requires strong name convention inorder to avoid name conflicts), inline css (makes the code cluttered and harder to maintain) or modules (considered best for styling specific component when there are multiple component with unique styles).
+
 ### External CSS
 - It involves storing in separate CSS files. It can be efficient for global styles or styles shared across many components. However, it can lead to class name conflicts in complex applications.
 

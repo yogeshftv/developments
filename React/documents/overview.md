@@ -27,7 +27,48 @@ A well-organized React project typically follows a specific folder structure to 
 - node_modules : It contains external libraries & packages that our project relies on.
 - public : It holds static assets like images, videos, fonts, icons, favicons & etc. The assets placed inside of the public folder are not bundled (processed by React) when the final output (build file) for the project is generated. All the static assets are directly accessible via the URL.
 - src : This is the root directory for your React application code. All your source code goes here.
-- src/assets : This folder contains images, videos & etc. This folder is very similar to public folder but the files in the assets folder are bundled during the final output (build dir), this means they are not available via URL and in order to use them we need to first import them.
+- src/assets : This folder can too contain static assets like images, videos & etc (but it not considered common practice). This folder is very similar to public folder but the files in the assets folder are bundled during the final output (build), this means they are not available via URL and in order to use them you need to first import them.
 - src/styles : This folder houses all the CSS stylesheet files.
-- src/Components : This is where we create our all different Component files.
-- main.js/index.js : This file serves as an entry point for our web application.
+- src/Components : This folder serves as the home for all the reusable React components.
+- main.js/index.js : This file acts as an entry point for your application.
+
+### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+siddhant@ftv.ind.in
