@@ -10,7 +10,7 @@ function myCustomApp() {
   )
 }
 
-// If react compiles the above JSX code in same format as below then, if the below code passed to createRoot() method will it work?
+// If react compiles the above JSX code in same format as below then, if the below code passed to createRoot() method, will it work?
 const ReactElement = {
   type: 'a',
   props: {

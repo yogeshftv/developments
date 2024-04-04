@@ -1,0 +1,16 @@
+/*
+
+Styling components through modules refers to a technique where you define styles specific to a component within a separate module file (usually css).
+
+*/
+.button {
+    border: 0;
+    color: #fff; 
+    border-radius: 8px;
+    background-color: cornflowerblue;
+}
+/* 
+
+One of the advantages of using modules for styling is that, a unique identifier is auto-generated using a hashing algorithm. For example, if you have a CSS module name Button.module.css containing a class ".btn", the build process might transform it into something like ".hash-1234", this ensures that the class name used for styling your components is unique within the entire application, thus eliminating the risk of conflicts with other components that might also have same class name.
+
+*/

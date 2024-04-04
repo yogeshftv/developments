@@ -1,7 +1,8 @@
 ### Summary
-- Props are the custom properties that are passed from the parent component to the children component.
-- To pass props, add them to the JSX, just like you would with HTML attributes.
-- To read props you can either use dot notation or you can destructure them in the children component's param itself.
+- Props are the read-only custom properties (data) that are passed/sent from the parent component to the children component.
+- To pass props, add them to the JSX, just like you would with HTML attributes (it is like key value pair).
+- To read props you can either use dot notation or you can destructure them in the children component's param itself. 
+- Prop is a javascript object that stores (includes) all the properties passed from parent component to the children component. 
 - You can specify a default value like size = 100, which is used for missing and undefined props.
 - You can forward all props from one component to another using spread syntax, for example {...props}.
 - Nested JSX like <Card><Avatar /></Card> will appear as Card component’s children prop.
