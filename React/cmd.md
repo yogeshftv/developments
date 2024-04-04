@@ -5,6 +5,7 @@
 4. Rename File or Folder - `ren exst_dir/file new_dir/file`
 5. Move File or Folder - `move source_path destination_path`
 6. Copy File or Folder - `copy source_path destination_path`
+7. Remove folder with content - `rmdir /s /q dir`
 
 ### Linux
 1. Create File - `touch filename.ext OR echo "some content" > filename.ext`
