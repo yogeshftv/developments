@@ -32,12 +32,6 @@ A well-organized React project typically follows a specific folder structure to 
 - src/Components : This folder serves as the home for all the reusable React components.
 - main.js/index.js : This file acts as an entry point for your application.
 
-### 
-
-
-
-
-
 
 
 
