@@ -1,0 +1,15 @@
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\bin\Debug\net8.0\FirstConsoleApp.exe
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\bin\Debug\net8.0\FirstConsoleApp.deps.json
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\bin\Debug\net8.0\FirstConsoleApp.runtimeconfig.json
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\bin\Debug\net8.0\FirstConsoleApp.dll
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\bin\Debug\net8.0\FirstConsoleApp.pdb
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.AssemblyInfo.cs
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.sourcelink.json
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.dll
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\refint\FirstConsoleApp.dll
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.pdb
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\FirstConsoleApp.genruntimeconfig.cache
+C:\Users\Public\Yogesh_Dev\Courses\C#\FirstConsoleApp\obj\Debug\net8.0\ref\FirstConsoleApp.dll
